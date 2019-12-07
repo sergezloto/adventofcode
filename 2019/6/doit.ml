@@ -2,8 +2,7 @@ let _ =
   let rec read_one l =
     try
       match read_line () |> String.split_on_char ')' with
-      | [a;b] ->
-         read_one ((b,a) :: l )
+      | [a;b] -> read_one ((b,a) :: l )
       | _ -> failwith "Invalid input format"
     with End_of_file -> l in
   let rec orbits b l n =
